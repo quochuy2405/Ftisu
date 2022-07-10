@@ -49,6 +49,11 @@
   @include button(100%, 40px, 100rem, var(--color-button-main));
   margin: 0 auto;
   color: white;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
 }
 .registerBySocialMedia {
   display: flex;
@@ -63,6 +68,7 @@
   display: flex;
   align-items: center;
 
+  cursor: pointer;
   gap: 5px;
   font-size: 0.7rem;
   font-weight: 600;
@@ -90,4 +96,8 @@
   padding: 15px 0 5px 0;
   font-size: 0.9rem;
   opacity: 0.8;
+}
+.invalid {
+  font-size: 0.7rem;
+  color: rgb(255, 43, 43);
 }
