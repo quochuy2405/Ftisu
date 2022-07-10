@@ -32,14 +32,24 @@ function Register() {
             <div className={Styles.lastName}>
               <fieldset className={Styles.inputField}>
                 <legend>Họ và tên đệm</legend>
-                <input type="text" name="lastName" onChange={(e) => handelOnChange(e)} />
+                <input
+                  value={dataForm.lastName}
+                  type="text"
+                  name="lastName"
+                  onChange={(e) => handelOnChange(e)}
+                />
               </fieldset>
               {validate.lastName && <p className={Styles.invalid}>Hãy nhập họ và tên đệm</p>}
             </div>
             <div className={Styles.firstName}>
               <fieldset className={Styles.inputField}>
                 <legend>Tên</legend>
-                <input type="text" name="firstName" onChange={(e) => handelOnChange(e)} />
+                <input
+                  value={dataForm.firstName}
+                  type="text"
+                  name="firstName"
+                  onChange={(e) => handelOnChange(e)}
+                />
               </fieldset>
               {validate.firstName && <p className={Styles.invalid}>Hãy nhập tên</p>}
             </div>
@@ -47,14 +57,24 @@ function Register() {
           <div className={Styles.email}>
             <fieldset className={Styles.inputField}>
               <legend>Email</legend>
-              <input type="text" name="email" onChange={(e) => handelOnChange(e)} />
+              <input
+                value={dataForm.email}
+                type="text"
+                name="email"
+                onChange={(e) => handelOnChange(e)}
+              />
             </fieldset>
             {validate.email && <p className={Styles.invalid}>Hãy nhập email</p>}
           </div>
           <div className={Styles.password}>
             <fieldset className={Styles.inputField}>
               <legend>Mật khẩu</legend>
-              <input type="text" name="password" onChange={(e) => handelOnChange(e)} />
+              <input
+                value={dataForm.password}
+                type="text"
+                name="password"
+                onChange={(e) => handelOnChange(e)}
+              />
             </fieldset>
             {validate.password && <p className={Styles.invalid}>Hãy nhập mật khẩu</p>}
           </div>
