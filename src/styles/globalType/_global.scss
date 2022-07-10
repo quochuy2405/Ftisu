@@ -1,0 +1,38 @@
+@mixin paperBlank {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 0 6px 1px rgba(186, 184, 184, 0.755);
+}
+
+@mixin inputText {
+  padding: 0;
+  border-radius: 5px;
+  border: 1px solid rgb(193, 193, 193);
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin: 4px 0;
+  & legend {
+    margin: 0 10px;
+    font-size: 0.8rem;
+    line-height: normal;
+    opacity: 0.8;
+    font-weight: 300;
+  }
+  & input {
+    width: 100%;
+    border-radius: inherit;
+    padding: 5px 5px 10px 10px;
+  }
+}
+
+@mixin button($width, $height, $radius, $background) {
+  width: $width;
+  height: $height;
+  border-radius: $radius;
+  background-color: $background;
+  text-align: center;
+  line-height: $height;
+  font-size: 1rem;
+  font-weight: 500;
+}
