@@ -42,9 +42,6 @@
   flex: 1;
 }
 
-.inputField {
-  @include inputText;
-}
 .buttonRegister {
   @include button(100%, 40px, 100rem, var(--color-button-main));
   margin: 0 auto;
@@ -96,8 +93,4 @@
   padding: 15px 0 5px 0;
   font-size: 0.9rem;
   opacity: 0.8;
-}
-.invalid {
-  font-size: 0.7rem;
-  color: rgb(255, 43, 43);
 }

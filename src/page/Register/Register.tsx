@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Styles from '@/styles/page/Register.module.scss'
 import Facebook from '/icon/icfacebook.svg'
 import Google from '/icon/icgoogle.svg'
-import { Icon } from '@/components/HPComponents'
+import { Icon, Input } from '@/components/HPComponents'
 function Register() {
   const [validate, setValidate] = useState({
     lastName: false,
@@ -17,7 +17,7 @@ function Register() {
     email: '',
     password: ''
   })
-  const handelOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDataForm({ ...dataForm, [e.target.name]: e.target.value })
     setValidate({ ...validate, [e.target.name]: !e.target.value })
   }
@@ -30,53 +30,49 @@ function Register() {
         <div className={Styles.inputGroup}>
           <div className={Styles.name}>
             <div className={Styles.lastName}>
-              <fieldset className={Styles.inputField}>
-                <legend>Họ và tên đệm</legend>
-                <input
-                  value={dataForm.lastName}
-                  type="text"
-                  name="lastName"
-                  onChange={(e) => handelOnChange(e)}
-                />
-              </fieldset>
-              {validate.lastName && <p className={Styles.invalid}>Hãy nhập họ và tên đệm</p>}
+              <Input
+                value={dataForm.lastName}
+                type={'text'}
+                name={'lastName'}
+                handelChange={handleOnChange}
+                title="Họ và tên đệm"
+                invalid={validate.lastName}
+                textInvalid="Hãy nhập họ và tên đệm"
+              />
             </div>
             <div className={Styles.firstName}>
-              <fieldset className={Styles.inputField}>
-                <legend>Tên</legend>
-                <input
-                  value={dataForm.firstName}
-                  type="text"
-                  name="firstName"
-                  onChange={(e) => handelOnChange(e)}
-                />
-              </fieldset>
-              {validate.firstName && <p className={Styles.invalid}>Hãy nhập tên</p>}
+              <Input
+                value={dataForm.firstName}
+                type={'text'}
+                name={'firstName'}
+                handelChange={handleOnChange}
+                title="Tên"
+                invalid={validate.firstName}
+                textInvalid="Hãy nhập tên"
+              />
             </div>
           </div>
           <div className={Styles.email}>
-            <fieldset className={Styles.inputField}>
-              <legend>Email</legend>
-              <input
-                value={dataForm.email}
-                type="text"
-                name="email"
-                onChange={(e) => handelOnChange(e)}
-              />
-            </fieldset>
-            {validate.email && <p className={Styles.invalid}>Hãy nhập email</p>}
+            <Input
+              value={dataForm.email}
+              type={'text'}
+              name={'email'}
+              handelChange={handleOnChange}
+              title="Email"
+              invalid={validate.email}
+              textInvalid="Hãy nhập Email"
+            />
           </div>
           <div className={Styles.password}>
-            <fieldset className={Styles.inputField}>
-              <legend>Mật khẩu</legend>
-              <input
-                value={dataForm.password}
-                type="text"
-                name="password"
-                onChange={(e) => handelOnChange(e)}
-              />
-            </fieldset>
-            {validate.password && <p className={Styles.invalid}>Hãy nhập mật khẩu</p>}
+            <Input
+              value={dataForm.password}
+              type={'password'}
+              name={'password'}
+              handelChange={handleOnChange}
+              title="Mật khẩu"
+              invalid={validate.password}
+              textInvalid="Hãy nhập mật khẩu"
+            />
           </div>
         </div>
         <div className={Styles.buttonRegister}>Đăng ký</div>

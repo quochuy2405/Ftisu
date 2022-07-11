@@ -1,0 +1,25 @@
+.inputField {
+  padding: 0;
+  border-radius: 5px;
+  border: 1px solid rgb(193, 193, 193);
+  display: flex;
+  align-items: center;
+  background-color: white;
+  margin: 4px 0;
+  & legend {
+    margin: 0 10px;
+    font-size: 0.8rem;
+    line-height: normal;
+    opacity: 0.8;
+    font-weight: 300;
+  }
+  & input {
+    width: 100%;
+    border-radius: inherit;
+    padding: 5px 5px 10px 10px;
+  }
+}
+.invalid {
+  font-size: 0.7rem;
+  color: rgb(255, 43, 43);
+}
