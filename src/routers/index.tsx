@@ -6,36 +6,36 @@ export const routers: Array<RouteItem> = [
   {
     path: '/',
     header: true,
-    main: <Home></Home>
+    element: <Home></Home>
   },
   {
     path: '/register',
     header: false,
-    main: <Register></Register>
+    element: <Register></Register>
   },
   {
     path: '/team',
     header: true,
-    main: <Team></Team>
+    element: <Team></Team>
   },
   {
     path: '/admin/:slug',
     header: false,
-    main: <Admin></Admin>
+    element: <Admin></Admin>
   },
   {
     path: '/admin/:slug/:opt',
     header: false,
-    main: <Admin></Admin>
+    element: <Admin></Admin>
   },
   {
     path: '/test',
     header: true,
-    main: <Navigate to="/admin/dashboard" replace />
+    element: <Navigate to="/admin/dashboard" replace />
   },
   {
     path: '/*',
     header: false,
-    main: <Page404></Page404>
+    element: <Page404></Page404>
   }
 ]

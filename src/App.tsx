@@ -12,7 +12,7 @@ const showContentMenus = (routes: Array<RouteItem>) => {
   var result = null
   if (routes.length) {
     result = routes.map((value, key) => {
-      return <Route path={value.path} element={value.main} key={key}></Route>
+      return <Route path={value.path} element={value.element} key={key}></Route>
     })
   }
   return <Routes>{result}</Routes>
@@ -24,7 +24,7 @@ function App() {
     <>
       <I18nextProvider i18n={setup}>
         <div className="App">
-          {routers.find(e=> e.path === location.pathname )?.header && <Header></Header>}
+          {routers.find((e) => e.path === location.pathname)?.header && <Header></Header>}
           {showContentMenus(routers)}
           {/* 
           <Routes>
