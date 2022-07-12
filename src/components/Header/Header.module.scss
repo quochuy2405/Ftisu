@@ -1,139 +1,81 @@
 .header {
-  .navbar {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    ul {
-      align-items: center;
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      @media (max-width: 991px) {
-        display: none;
-      }
-      li {
-        position: relative;
-        a {
-          align-items: center;
-          color: var(--color-text-primary);
-          display: flex;
-          font-size: 16px;
-          font-weight: 400;
-          justify-content: space-between;
-          padding: 10px 0 10px 30px;
-          transition: 0.3s;
-          white-space: nowrap;
-          text-decoration: none;
-        }
-      }
-    }
-  }
-
-  .navbarMobile {
-    background: var(--color-background-blur);
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    position: fixed;
-    right: 0;
-    top: 0;
-    transition: 0.3s;
-    z-index: 1;
-    ul {
-      background-color: var(--color-background-primary);
-      border-radius: 8px;
-      bottom: 70px;
-      display: block;
-      left: 15px;
-      overflow-y: auto;
-      padding: 10px 0;
-      position: absolute;
-      right: 15px;
-      top: 14px;
-      transition: 0.3s;
-    }
-  }
-}
-
-.container {
-  z-index: 998;
-  display: flex;
-  position: fixed;
+  background-color: var(--color-white);
   width: 100%;
-  padding-right: 3rem !important;
-  padding-left: 3rem !important;
-  margin-right: auto;
-  margin-left: auto;
-  justify-content: space-between;
-  align-items: center;
+  height: var(--header-height);
+  box-shadow: 0 0 1px 1px rgba(227, 227, 227, 0.699);
+  z-index: 100;
 
-  top: 0;
-  left: 0;
-  background: var(--theme-primary);
-  box-shadow: 0 6px 11px rgb(64 68 77 / 35%);
-  padding: 7px 0;
-  transition: all 0.5s;
-  // z-index: 997;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
 }
 .logo {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  gap: 10px;
+
+  font-size: 1.4rem;
+  font-weight: 500;
   img {
-    margin: 0;
-    max-height: 40px;
-    padding: 0;
+    width: fit-content;
+    height: 100%;
+    object-fit: contain;
   }
 }
-
-.toggleNavigation {
-  // position: absolute;
-  // right: 15px;
-  // top: 15px;
-  // width: 30px;
-  color: var(--color-background-primary);
-  cursor: pointer;
-  display: none;
-  font-size: 28px;
-  line-height: 0;
-  transition: 0.5s;
-
-  @media (max-width: 991px) {
-    display: block;
-  }
+.fsInfoAccount {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  height: 70%;
 }
-.close {
-  position: absolute;
-  right: 25px;
-  top: 25px;
-  display: block !important;
-}
-.userMenu {
-  ul {
-    list-style: none;
-    display: flex;
-    position: fixed !important;
-    z-index: 5;
-    justify-content: center;
+.search {
+  width: 250px;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  color: var(--color-text-gray);
+
+  border: 1px solid rgb(214, 214, 214);
+  padding: 0 10px;
+  border-radius: 4px;
+  & input {
+    flex: 1;
     width: 100%;
-    height: auto;
-    bottom: 0;
-    left: 0;
-    padding: 8px 0;
-    background-color: #fff;
-    box-shadow: 0 4px 32pxrgba (64, 68, 77, 0.08);
-    align-items: center;
-    li {
-      &:not(:last-child) {
-        margin-right: 20px;
-      }
+    height: 100%;
+    padding: 0 10px;
+    color: rgb(83, 83, 83);
+    font-size: 0.9rem;
+    &::placeholder {
+      color: rgb(188, 188, 188);
+      font-weight: 400;
+    }
+    &:-ms-input-placeholder {
+      color: rgb(188, 188, 188);
+      font-weight: 400;
+    }
+
+    &::-ms-input-placeholder {
+      color: rgb(188, 188, 188);
+      font-weight: 400;
     }
   }
 }
-.buttonAccount {
-  background: var(--color-background-tertiary);
-  border-radius: 2.625rem;
-  padding: 0.5rem 20px;
+.accountInfo {
+  display: flex;
   align-items: center;
-  color: var(--color-text-secondary);
+  gap: 10px;
+  font-size: 20px;
+  color: var(--color-text-gray);
+}
+.avataUser {
+  width: 30px;
+  height: 30px;
+  box-shadow: 0 0 0 1px var(--color-text-gray);
+  border-radius: 20px;
 }

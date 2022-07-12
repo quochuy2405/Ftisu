@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "start": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "prettier --check . && eslint .",
@@ -13,10 +12,8 @@
   },
   "dependencies": {
     "clsx": "^1.2.1",
-    "i18next": "^21.8.13",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-i18next": "^11.18.0",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
     "react-toastify": "^9.0.5"
