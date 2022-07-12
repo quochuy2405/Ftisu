@@ -1,16 +1,17 @@
-import React, { useRef, useState, useEffect, MutableRefObject } from 'react'
+import React, { useRef, useState, useEffect, MutableRefObject, memo } from 'react'
 import styles from './Header.module.scss'
 import { BsSearch } from 'react-icons/bs'
 import { TbMail } from 'react-icons/tb'
 import { IoNotificationsCircle } from 'react-icons/io5'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import logo from '@/images/logo176.png'
 import clsx from 'clsx'
 import components from '@/styles/Components.module.scss'
 import { useTranslation } from 'react-i18next'
-import { useLocation, Location } from 'react-router-dom'
+import { useLocation, Location, Link } from 'react-router-dom'
 import { FcList } from 'react-icons/fc'
 import { GrClose } from 'react-icons/gr'
+import HeaderDropdown from './HeaderDropdown'
 
 type MenuItem = {
   name: string
@@ -38,6 +39,7 @@ var showMenu = (temps: Array<MenuItem>, location: Location) => {
 const Header = (): JSX.Element => {
   const location: Location = useLocation()
   const { t } = useTranslation()
+  console.log('renderheader')
 
   //Nut  toggle
   // const wrapperRef = useRef() as MutableRefObject<HTMLUListElement>
@@ -54,7 +56,7 @@ const Header = (): JSX.Element => {
       <div className={clsx(styles.container)}>
         <div className={styles.logo}>
           <Link to="/">
-            <img alt="logo" src={logo}></img>
+            <img alt="Logo" src={logo}></img>
           </Link>
         </div>
         <nav
@@ -63,21 +65,21 @@ const Header = (): JSX.Element => {
           ref={menuRight}
         >
           <ul>{showMenu(t('components.header._menus', { returnObjects: true }), location)}</ul>
-          <i className={styles.toggleNavigation} onClick={() => setShowModile(!showModile)}>
-            {showModile && <GrClose className={styles.close}></GrClose>}
+          <i className={styles.close} onClick={() => setShowModile(!showModile)}>
+            {showModile && <GrClose></GrClose>}
           </i>
         </nav>
         <nav
           id="navbar"
-          className={clsx( { [styles.navbar]: !showModile, [styles.userMenu]: showModile })}
+          className={clsx({ [styles.navbar]: !showModile, [styles.userMenu]: showModile })}
           ref={menuRight}
         >
           <ul>
             <li>
               <a>
                 USD
-                <span className="sc-1b4wplq-0 ifkbzu">
-                  <i className="fa fa-angle-down" aria-hidden="true" />
+                <span>
+                  <i aria-hidden="true" />
                 </span>
               </a>
             </li>
@@ -93,10 +95,7 @@ const Header = (): JSX.Element => {
               <a> </a>
             </li>
             <li>
-              <button className={styles.buttonAccount}>
-
-                Tài khoản
-              </button>
+              <button className={styles.buttonAccount}>Tài khoản</button>
             </li>
           </ul>
           <i className={styles.toggleNavigation} onClick={() => setShowModile(!showModile)}>
@@ -104,8 +103,9 @@ const Header = (): JSX.Element => {
           </i>
         </nav>
       </div>
+      <HeaderDropdown></HeaderDropdown>
     </header>
   )
 }
 
-export default Header
+export default memo(Header)
