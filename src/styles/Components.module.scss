@@ -1,0 +1,20 @@
+.d-flex {
+  display: flex !important;
+}
+.align-items-center {
+  align-items: center !important;
+}
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.active {
+  color: var(--color-text-active) !important;
+  text-shadow: rgba(162, 255, 247, 0.18) 0 0 1px !important;
+}
