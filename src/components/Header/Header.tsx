@@ -5,7 +5,7 @@ import { IoChevronDownOutline } from 'react-icons/io5'
 import { NavLink, useLocation } from 'react-router-dom'
 import Styles from './Header.module.scss'
 import HomeMenu from './Menu/HomeMenu'
-import logo from '/image/logo.png'
+import logo from '@/assets/image/logo.png'
 const navLinks = [
   {
     name: 'Trang chủ',

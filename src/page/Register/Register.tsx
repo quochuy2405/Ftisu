@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from 'react'
 import Styles from '@/styles/page/Register.module.scss'
-import Facebook from '/icon/icfacebook.svg'
-import Google from '/icon/icgoogle.svg'
+import Facebook from '@/assets/icon/icfacebook.svg'
+import Google from '@/assets/icon/icgoogle.svg'
 import { Icon, Input } from '@/components/HPComponents'
 function Register() {
   const [validate, setValidate] = useState({
