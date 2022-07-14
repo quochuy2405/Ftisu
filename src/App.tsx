@@ -6,8 +6,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layouts />}>
           <Route path="/" element={<Home />} />
-          <Route path="/admin/2" element={<Register />} />
         </Route>
+        <Route path="/register" element={<Register />} />
         <Route element={<Page404 />} />
       </Routes>
     </div>

@@ -3,6 +3,7 @@ import logo from '@/assets/image/logo.png'
 import { useState } from 'react'
 import { GoSearch } from 'react-icons/go'
 import { IoChevronDownOutline } from 'react-icons/io5'
+import { Link } from 'react-router-dom'
 import Styles from './Header.module.scss'
 import HomeMenu from './Menu/HomeMenu'
 const navLinks = [
@@ -80,9 +81,9 @@ const Header = (): JSX.Element => {
         <div className={Styles.btnSignIn}>
           <p>Đăng nhập</p>
         </div>
-        <div className={Styles.btnSignUp}>
+        <Link to={'/register'} className={Styles.btnSignUp}>
           <p>Đăng ký</p>
-        </div>
+        </Link>
       </div>
       <div className={`${Styles.menuBox} ${bodyMenu && Styles.activeMenu} `}>{bodyMenu}</div>
     </div>
