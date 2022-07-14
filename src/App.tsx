@@ -5,10 +5,11 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Layouts />}>
-          <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
+          <Route path="/a" element={<Register />} />
         </Route>
         <Route path="/register" element={<Register />} />
-        <Route element={<Page404 />} />
+        <Route path="*" element={<Page404 />} />
       </Routes>
     </div>
   )
