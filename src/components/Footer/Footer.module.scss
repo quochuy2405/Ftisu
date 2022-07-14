@@ -19,8 +19,12 @@
   opacity: 0.8;
 
   .logo {
-    .groupIcon {
-      display: flex;
+    width: 130px;
+    height: 80px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   }
 
