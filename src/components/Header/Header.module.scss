@@ -43,17 +43,20 @@
   align-items: center;
   gap: 15px;
   font-weight: 400;
-  & a {
+  & .navLink {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0 5px;
+    cursor: pointer;
+    transition: all linear 0.2s;
+    &:hover {
+      transition: all linear 0.2s;
+      color: var(--color-main);
+    }
   }
   .activeLink {
     color: var(--color-main);
-  }
-  .unActiveLink {
-    color: black;
   }
 }
 .btnSignInUp {
@@ -65,6 +68,11 @@
 }
 .btnSignIn {
   cursor: pointer;
+  transition: all linear 0.2s;
+  &:hover {
+    transition: all linear 0.2s;
+    color: var(--color-main);
+  }
 }
 .btnSignUp {
   padding: 8px 30px;
@@ -73,6 +81,13 @@
   border-radius: 100rem;
   font-weight: 600;
   cursor: pointer;
+  opacity: 0.9;
+  transition: all linear 0.2s;
+  &:hover {
+    opacity: 1;
+    transition: all linear 0.2s;
+    box-shadow: 0 0 1px 1px rgb(220, 220, 220);
+  }
 }
 .header .menuBox {
   position: absolute;
@@ -95,6 +110,7 @@
 }
 .activeChevron {
   transform: rotate(180deg);
+  transition: all linear 0.2s;
 }
 
 .searchBar {
@@ -115,6 +131,12 @@
   &:hover {
     cursor: pointer;
     gap: 5px;
+    & input {
+      transition: all ease-in-out 0.2s;
+      width: 130px;
+    }
+  }
+  &:focus-within {
     & input {
       transition: all ease-in-out 0.2s;
       width: 130px;

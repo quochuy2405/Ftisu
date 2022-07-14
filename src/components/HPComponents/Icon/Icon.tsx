@@ -9,7 +9,7 @@ function Icon(props: IconProps) {
   const { image, size } = props
   return (
     <div style={{ width: `${size}px`, height: `${size}px`, borderRadius: 'inherit' }}>
-      <img src={image} alt="" />
+      <img src={image} alt="icon" />
     </div>
   )
 }

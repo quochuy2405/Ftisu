@@ -1,51 +1,52 @@
 /* eslint-disable @next/next/no-img-element */
+import logo from '@/assets/image/logo.png'
 import { useState } from 'react'
 import { GoSearch } from 'react-icons/go'
 import { IoChevronDownOutline } from 'react-icons/io5'
-import { NavLink, useLocation } from 'react-router-dom'
 import Styles from './Header.module.scss'
 import HomeMenu from './Menu/HomeMenu'
-import logo from '@/assets/image/logo.png'
 const navLinks = [
   {
+    id: 'link_1',
     name: 'Trang chủ',
-    link: '/',
     menu: <HomeMenu />
   },
   {
+    id: 'link_2',
     name: 'Thành viên',
-    link: '/admin/2',
     menu: <HomeMenu />
   },
   {
+    id: 'link_3',
     name: 'Liên hệ',
-    link: '/2',
     menu: <HomeMenu />
   },
   {
+    id: 'link_4',
     name: 'Tiếng việt',
-    link: '/3',
     menu: <HomeMenu />
   },
   {
+    id: 'link_5',
     name: 'USD',
-    link: '/4',
     menu: undefined
   }
 ]
 const Header = (): JSX.Element => {
   const [bodyMenu, setBodyMenu] = useState<JSX.Element>()
-  const router = useLocation()
+  const [activeId, setActiveId] = useState<string>()
 
   // use this variable to made animation menu slide
   document.documentElement.style.setProperty('--max-HeightListBar', `${45}vh`)
 
   // handle for menu slide and change data in card
-  const handleBodyMenu = (link: string, menu: JSX.Element | undefined) => {
-    if (router.pathname === link) {
+  const handleBodyMenu = (id: string, menu: JSX.Element | undefined) => {
+    if (id === activeId) {
       setBodyMenu(bodyMenu ? undefined : menu)
+      setActiveId('')
     } else {
-      if (bodyMenu) setBodyMenu(menu)
+      setBodyMenu(menu)
+      setActiveId(id)
     }
   }
 
@@ -54,22 +55,21 @@ const Header = (): JSX.Element => {
       <div className={Styles.logo}>
         <img src={logo} alt="logo" />
       </div>
-
       <div className={Styles.navLinks}>
         {navLinks?.map((item) => (
-          <NavLink
-            to={item?.link}
-            key={item.name}
-            className={({ isActive }) => (isActive ? Styles.activeLink : Styles.unActiveLink)}
-            onClick={() => handleBodyMenu(item.link, item?.menu)}
+          <div
+            key={item?.id}
+            className={`${Styles.navLink} ${item?.id === activeId && Styles.activeLink}`}
+            onClick={() => handleBodyMenu(item?.id, item?.menu)}
           >
-            <p>{item.name}</p>
-            {item.menu && (
+            <p>{item?.name}</p>
+            {item?.menu && (
               <IoChevronDownOutline
-                className={router.pathname === item.link && bodyMenu ? Styles.activeChevron : ''}
+                size={12}
+                className={item?.id === activeId ? Styles.activeChevron : ''}
               />
             )}
-          </NavLink>
+          </div>
         ))}
       </div>
       <div className={Styles.searchBar}>

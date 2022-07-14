@@ -1,23 +1,75 @@
 .footer {
   width: 100%;
   height: var(--footer-height);
-  background-color: var(--color-white);
-  box-shadow: 0 0 2px 1px rgba(207, 207, 207, 0.699);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  color: black;
+  background-color: #092540;
+  color: white;
   font-weight: 500;
-  font-size: 0.65rem;
+  font-size: 0.8rem;
+  padding: 40px;
 }
-.teamOfUser {
+.footerContent {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  width: 100%;
 }
-.copyRight {
+.teamContact {
+  flex: 2;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 10px;
+  opacity: 0.8;
+
+  .logo {
+    .groupIcon {
+      display: flex;
+    }
+  }
+
+  .contactBy {
+    display: flex;
+    flex-direction: column;
+    .itemContact {
+      gap: 10px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+}
+.groupLinks {
+  flex: 8;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.title {
+  display: flex;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.titleLink {
+  flex: 1;
+}
+
+.content {
+  display: flex;
+}
+.itemLink {
+  flex: 1;
+  font-size: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  & a {
+    display: block;
+    opacity: 0.8;
+    color: inherit;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.license {
+  margin: 20px 0;
 }
