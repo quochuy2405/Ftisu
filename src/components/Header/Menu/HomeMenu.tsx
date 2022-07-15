@@ -1,6 +1,4 @@
-import React from 'react'
-
-function HomeMenu() {
+function HomeMenu(): JSX.Element {
   return <h1>HomeMenu</h1>
 }
 

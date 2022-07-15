@@ -1,8 +1,9 @@
-import React from 'react'
 import type { Input as TypeInput } from '../Interface'
 import Styles from './Input.module.scss'
-function Input(props: TypeInput) {
+
+function Input(props: TypeInput): JSX.Element {
   const { name, value, handelChange, type, title, invalid, textInvalid } = props
+
   return (
     <>
       <fieldset className={Styles.inputField}>

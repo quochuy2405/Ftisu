@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react'
 import notfound from '@/assets/image/error_404.svg'
-import Styles from '@/styles/page/Page404.module.scss'
 import { Metadata } from '@/components'
+import Styles from '@/styles/page/Page404.module.scss'
 import { Link } from 'react-router-dom'
-function Page404() {
+
+function Page404(): JSX.Element {
   return (
     <>
       <Metadata title="Khóa học - Ms.Quynh" description="Khóa học - Ms.Quynh" />

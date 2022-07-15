@@ -4,23 +4,27 @@ import Styles from '@/styles/page/Register.module.scss'
 import Facebook from '@/assets/icon/icfacebook.svg'
 import Google from '@/assets/icon/icgoogle.svg'
 import { Icon, Input } from '@/components/HPComponents'
-function Register() {
+
+function Register(): JSX.Element {
   const [validate, setValidate] = useState({
     lastName: false,
     firstName: false,
     email: false,
     password: false
   })
+
   const [dataForm, setDataForm] = useState({
     lastName: '',
     firstName: '',
     email: '',
     password: ''
   })
+
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDataForm({ ...dataForm, [e.target.name]: e.target.value })
     setValidate({ ...validate, [e.target.name]: !e.target.value })
   }
+
   return (
     <div className={Styles.register}>
       <div className={Styles.registerForm}>

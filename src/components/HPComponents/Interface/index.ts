@@ -7,4 +7,15 @@ interface Input {
   invalid?: boolean
   textInvalid?: string
 }
-export type { Input }
+
+interface Icon {
+  image: string
+  size: number
+}
+
+interface StatusTag {
+  title: string
+  type: 'success' | 'error' | 'warning'
+}
+
+export type { Input, Icon, StatusTag }

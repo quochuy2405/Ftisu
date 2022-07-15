@@ -6,6 +6,8 @@ import { IoChevronDownOutline } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 import Styles from './Header.module.scss'
 import HomeMenu from './Menu/HomeMenu'
+
+// this have menu for each nav link
 const navLinks = [
   {
     id: 'link_1',
@@ -33,6 +35,7 @@ const navLinks = [
     menu: undefined
   }
 ]
+
 const Header = (): JSX.Element => {
   const [bodyMenu, setBodyMenu] = useState<JSX.Element>()
   const [activeId, setActiveId] = useState<string>()

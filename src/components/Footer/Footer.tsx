@@ -1,14 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react'
-import Styles from '@/components/Footer/Footer.module.scss'
-import { Link } from 'react-router-dom'
 import Logo from '@/assets/image/logo.png'
-import IcFacebook from '../../assets/icon/icfacebook.svg'
-import { Icon } from '../HPComponents'
+import Styles from '@/components/Footer/Footer.module.scss'
 import { IoCallOutline } from 'react-icons/io5'
 import { MdOutlineMailOutline } from 'react-icons/md'
+import { Link } from 'react-router-dom'
+import IcFacebook from '../../assets/icon/icfacebook.svg'
+import { Icon } from '../HPComponents'
 
-function Footer() {
+function Footer(): JSX.Element {
   return (
     <div className={Styles.footer}>
       <div className={Styles.footerContent}>
