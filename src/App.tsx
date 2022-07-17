@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { Home, Layouts, Page404, Register } from './page'
+import { Home, Layouts, Page404, Register, Test } from './page'
 
 function App(): JSX.Element {
   return (
@@ -7,7 +7,7 @@ function App(): JSX.Element {
       <Routes>
         <Route path="/" element={<Layouts />}>
           <Route index element={<Home />} />
-          <Route path="/test" element={<Register />} />
+          <Route path="/test" element={<Test />} />
         </Route>
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<Page404 />} />
