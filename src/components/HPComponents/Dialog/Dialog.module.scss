@@ -1,5 +1,5 @@
 @use '../../../styles/abtracts/mixins' as *;
-@use '../../../styles/layers/global' as *;
+@use '../layouts/common' as *;
 
 @keyframes close {
   0% {
@@ -64,4 +64,7 @@
   &.open {
     display: block;
   }
+}
+.click {
+  display: block;
 }

@@ -5,19 +5,19 @@ import { GoSearch } from 'react-icons/go'
 import { IoChevronDownOutline } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 import Styles from './Header.module.scss'
-import HomeMenu from './Menu/HomeMenu'
+import { HomeMenu, MemberMenu } from './Menu'
 
 // this have menu for each nav link
 const navLinks = [
   {
     id: 'link_1',
     name: 'Trang chủ',
-    menu: <HomeMenu />
+    menu: undefined
   },
   {
     id: 'link_2',
     name: 'Thành viên',
-    menu: <HomeMenu />
+    menu: <MemberMenu />
   },
   {
     id: 'link_3',
@@ -81,9 +81,10 @@ const Header = (): JSX.Element => {
         <input type="text" placeholder="Tìm kiếm" />
       </div>
       <div className={Styles.btnSignInUp}>
-        <div className={Styles.btnSignIn}>
+        <Link to={'/login'} className={Styles.btnSignIn}>
           <p>Đăng nhập</p>
-        </div>
+        </Link>
+
         <Link to={'/register'} className={Styles.btnSignUp}>
           <p>Đăng ký</p>
         </Link>

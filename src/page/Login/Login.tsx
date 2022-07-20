@@ -1,22 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useState } from 'react'
-import Styles from '@/styles/page/Register.module.scss'
 import Facebook from '@/assets/icon/icfacebook.svg'
 import Google from '@/assets/icon/icgoogle.svg'
-import { Icon, Input } from '@/components/HPComponents'
-import { InputInLine } from '@/components/HPComponents/Input'
+import { Icon } from '@/components/HPComponents'
+import { InputAbove, InputInLine } from '@/components/HPComponents/Input'
+import Styles from '@/styles/page/Login.module.scss'
+import React, { useState } from 'react'
 
-function Register(): JSX.Element {
+function Login(): JSX.Element {
   const [validate, setValidate] = useState({
-    lastName: false,
-    firstName: false,
     email: false,
     password: false
   })
 
   const [dataForm, setDataForm] = useState({
-    lastName: '',
-    firstName: '',
     email: '',
     password: ''
   })
@@ -27,38 +23,14 @@ function Register(): JSX.Element {
   }
 
   return (
-    <div className={Styles.register}>
-      <div className={Styles.registerForm}>
+    <div className={Styles.login}>
+      <div className={Styles.loginForm}>
         <div className={Styles.title}>
           <p>Tạo tài khoản</p>
         </div>
         <div className={Styles.inputGroup}>
-          <div className={Styles.name}>
-            <div className={Styles.lastName}>
-              <InputInLine
-                value={dataForm.lastName}
-                type={'text'}
-                name={'lastName'}
-                handelChange={handleOnChange}
-                title="Họ và tên đệm"
-                invalid={validate.lastName}
-                textInvalid="Hãy nhập họ và tên đệm"
-              />
-            </div>
-            <div className={Styles.firstName}>
-              <InputInLine
-                value={dataForm.firstName}
-                type={'text'}
-                name={'firstName'}
-                handelChange={handleOnChange}
-                title="Tên"
-                invalid={validate.firstName}
-                textInvalid="Hãy nhập tên"
-              />
-            </div>
-          </div>
           <div className={Styles.email}>
-            <InputInLine
+            <InputAbove
               value={dataForm.email}
               type={'text'}
               name={'email'}
@@ -69,7 +41,7 @@ function Register(): JSX.Element {
             />
           </div>
           <div className={Styles.password}>
-            <InputInLine
+            <InputAbove
               value={dataForm.password}
               type={'password'}
               name={'password'}
@@ -80,9 +52,9 @@ function Register(): JSX.Element {
             />
           </div>
         </div>
-        <div className={Styles.buttonRegister}>Đăng ký</div>
-        <p className={Styles.textContent}>Hoặc đăng ký với email sử dụng</p>
-        <div className={Styles.registerBySocialMedia}>
+        <div className={Styles.buttonlogin}>Đăng nhập</div>
+        <p className={Styles.textContent}>Hoặc đăng nhập với email sử dụng</p>
+        <div className={Styles.loginBySocialMedia}>
           <div className={Styles.facebook}>
             <Icon image={Facebook} size={35} />
             <p>Đăng nhập với Facebook</p>
@@ -97,4 +69,4 @@ function Register(): JSX.Element {
   )
 }
 
-export default Register
+export default Login

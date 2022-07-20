@@ -8,7 +8,7 @@ function Dialog(): JSX.Element {
     <>
       <div
         style={{ position: 'absolute', zIndex: '1000' }}
-        className="click"
+        className={Styles.click}
         onClick={() => setOpen((e) => !e)}
       >
         <button>Click</button>

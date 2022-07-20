@@ -6,7 +6,7 @@ function Icon(props: Types): JSX.Element {
 
   return (
     <div style={{ width: `${size}px`, height: `${size}px`, borderRadius: 'inherit' }}>
-      <img src={image} alt="icon" />
+      <img src={image} alt="" />
     </div>
   )
 }
