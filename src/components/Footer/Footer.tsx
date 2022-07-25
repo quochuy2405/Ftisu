@@ -32,15 +32,10 @@ function Footer(): JSX.Element {
           </div>
         </div>
         <div className={Styles.groupLinks}>
-          <div className={Styles.title}>
-            <p className={Styles.titleLink}>Top Websites</p>
-            <p className={Styles.titleLink}>Top Android Apps</p>
-            <p className={Styles.titleLink}>Top iOS</p>
-            <p className={Styles.titleLink}>Apps Digital 100 DigitalRank</p>
-            <p className={Styles.titleLink}>API Top Browsers</p>
-          </div>
           <div className={Styles.content}>
             <div className={Styles.itemLink}>
+              <p className={Styles.titleLink}>Top Websites</p>
+
               <Link to={'/'}>Top Websites</Link>
               <Link to={'/'}>Top Android Apps</Link>
               <Link to={'/'}>Top iOS</Link>
@@ -54,6 +49,8 @@ function Footer(): JSX.Element {
               <Link to={'/'}>Privacy and Security</Link>
             </div>{' '}
             <div className={Styles.itemLink}>
+              <p className={Styles.titleLink}>Top Android Apps</p>
+
               <Link to={'/'}>Top Websites</Link>
               <Link to={'/'}>Top Android Apps</Link>
               <Link to={'/'}>Top iOS</Link>
@@ -67,19 +64,8 @@ function Footer(): JSX.Element {
               <Link to={'/'}>Privacy and Security</Link>
             </div>{' '}
             <div className={Styles.itemLink}>
-              <a href="/">Top Websites</a>
-              <Link to={'/'}>Top Android Apps</Link>
-              <Link to={'/'}>Top iOS</Link>
-              <Link to={'/'}>Apps Digital 100 DigitalRank</Link>
-              <Link to={'/'}>API Top Browsers</Link>
-              <Link to={'/'}>Top Search Engines</Link>
-              <Link to={'/'}>Mobile vs. Desktop Data</Link>
-              <Link to={'/'}>Our Data Verify</Link>
-              <Link to={'/'}>Your Website</Link>
-              <Link to={'/'}>Browser Extension</Link>
-              <Link to={'/'}>Privacy and Security</Link>
-            </div>
-            <div className={Styles.itemLink}>
+              <p className={Styles.titleLink}>Top iOS</p>
+
               <Link to={'/'}>Top Websites</Link>
               <Link to={'/'}>Top Android Apps</Link>
               <Link to={'/'}>Top iOS</Link>
@@ -93,6 +79,22 @@ function Footer(): JSX.Element {
               <Link to={'/'}>Privacy and Security</Link>
             </div>
             <div className={Styles.itemLink}>
+              <p className={Styles.titleLink}>Apps Digital 100 DigitalRank</p>
+
+              <Link to={'/'}>Top Websites</Link>
+              <Link to={'/'}>Top Android Apps</Link>
+              <Link to={'/'}>Top iOS</Link>
+              <Link to={'/'}>Apps Digital 100 DigitalRank</Link>
+              <Link to={'/'}>API Top Browsers</Link>
+              <Link to={'/'}>Top Search Engines</Link>
+              <Link to={'/'}>Mobile vs. Desktop Data</Link>
+              <Link to={'/'}>Our Data Verify</Link>
+              <Link to={'/'}>Your Website</Link>
+              <Link to={'/'}>Browser Extension</Link>
+              <Link to={'/'}>Privacy and Security</Link>
+            </div>
+            <div className={Styles.itemLink}>
+              <p className={Styles.titleLink}>API Top Browsers</p>
               <Link to={'/'}>Top Websites</Link>
               <Link to={'/'}>Top Android Apps</Link>
               <Link to={'/'}>Top iOS</Link>

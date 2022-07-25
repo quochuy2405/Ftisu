@@ -5,6 +5,7 @@ import { useDetectClickOutside } from 'react-detect-click-outside'
 import { useTranslation } from 'react-i18next'
 import { GoSearch } from 'react-icons/go'
 import { IoChevronDownOutline } from 'react-icons/io5'
+import { FaBars } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import Styles from './Header.module.scss'
 import { HomeMenu, MemberMenu, ProjectResearchMenu, ResourceMenu } from './Menu'
@@ -111,6 +112,9 @@ const Header = (): JSX.Element => {
           <Link to={'/register'} className={Styles.btnSignUp}>
             <p>{t('header.register')}</p>
           </Link>
+        </div>
+        <div className={Styles.iconBars}>
+          <FaBars />
         </div>
         <div className={`${Styles.menuBox} ${bodyMenu && Styles.activeMenu} `}>{bodyMenu}</div>
       </div>
