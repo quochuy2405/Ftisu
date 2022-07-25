@@ -49,6 +49,7 @@
     align-items: center;
     gap: 0 5px;
     cursor: pointer;
+
     transition: all linear 0.2s;
     &:hover {
       transition: all linear 0.2s;
@@ -99,7 +100,7 @@
   width: 100%;
   background-color: var(--color-white);
   transition: height 0.2s ease-in;
-
+  overflow: hidden;
   &.activeMenu {
     display: block;
     transition: height 0.17s ease-in;
@@ -141,5 +142,11 @@
       transition: all ease-in-out 0.2s;
       width: 130px;
     }
+  }
+}
+
+.lang {
+  select {
+    text-align: center;
   }
 }

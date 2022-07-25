@@ -1,47 +1,56 @@
 /* eslint-disable @next/next/no-img-element */
 import logo from '@/assets/image/logo.png'
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDetectClickOutside } from 'react-detect-click-outside'
+import { useTranslation } from 'react-i18next'
 import { GoSearch } from 'react-icons/go'
 import { IoChevronDownOutline } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 import Styles from './Header.module.scss'
-import { HomeMenu, MemberMenu } from './Menu'
-
-// this have menu for each nav link
-const navLinks = [
-  {
-    id: 'link_1',
-    name: 'Trang chủ',
-    menu: undefined
-  },
-  {
-    id: 'link_2',
-    name: 'Thành viên',
-    menu: <MemberMenu />
-  },
-  {
-    id: 'link_3',
-    name: 'Liên hệ',
-    menu: <HomeMenu />
-  },
-  {
-    id: 'link_4',
-    name: 'Tiếng việt',
-    menu: <HomeMenu />
-  },
-  {
-    id: 'link_5',
-    name: 'USD',
-    menu: undefined
-  }
-]
+import { HomeMenu, MemberMenu, ProjectResearchMenu, ResourceMenu } from './Menu'
 
 const Header = (): JSX.Element => {
+  const { t, i18n } = useTranslation()
   const [bodyMenu, setBodyMenu] = useState<JSX.Element>()
   const [activeId, setActiveId] = useState<string>()
+  const ref = useDetectClickOutside({
+    onTriggered: () => {
+      handleBodyMenu('', undefined)
+    }
+  })
+
+  // this have menu for each nav link
+  const navLinks = [
+    {
+      id: 'link_1',
+      name: t('header.home'),
+      menu: undefined
+    },
+    {
+      id: 'link_2',
+      name: t('header.members'),
+      menu: <MemberMenu />
+    },
+    {
+      id: 'link_3',
+      name: t('header.resources'),
+      menu: <ResourceMenu />
+    },
+    {
+      id: 'link_4',
+      name: t('header.projectResearch'),
+      menu: <ProjectResearchMenu />
+    }
+  ]
+
+  // change language
+  const handleChangeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    i18n.changeLanguage(event.target.value.toString().toLowerCase())
+    handleBodyMenu('', undefined)
+  }
 
   // use this variable to made animation menu slide
-  document.documentElement.style.setProperty('--max-HeightListBar', `${45}vh`)
+  document.documentElement.style.setProperty('--max-HeightListBar', `${50}vh`)
 
   // handle for menu slide and change data in card
   const handleBodyMenu = (id: string, menu: JSX.Element | undefined) => {
@@ -55,7 +64,7 @@ const Header = (): JSX.Element => {
   }
 
   return (
-    <div className={Styles.header}>
+    <div className={Styles.header} ref={ref}>
       <div className={Styles.logo}>
         <img src={logo} alt="logo" />
       </div>
@@ -75,6 +84,13 @@ const Header = (): JSX.Element => {
             )}
           </div>
         ))}
+        <div className={`${Styles.lang}`}>
+          <select name="lang" id="lang" onChange={(e) => handleChangeLanguage(e)}>
+            <option>{t('header.language')}</option>
+            <option value="en">EN</option>
+            <option value="vi">VI</option>
+          </select>
+        </div>
       </div>
       <div className={Styles.searchBar}>
         <GoSearch />
@@ -82,11 +98,11 @@ const Header = (): JSX.Element => {
       </div>
       <div className={Styles.btnSignInUp}>
         <Link to={'/login'} className={Styles.btnSignIn}>
-          <p>Đăng nhập</p>
+          <p>{t('header.login')}</p>
         </Link>
 
         <Link to={'/register'} className={Styles.btnSignUp}>
-          <p>Đăng ký</p>
+          <p>{t('header.register')}</p>
         </Link>
       </div>
       <div className={`${Styles.menuBox} ${bodyMenu && Styles.activeMenu} `}>{bodyMenu}</div>

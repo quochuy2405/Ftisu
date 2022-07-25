@@ -1,0 +1,14 @@
+{
+  "header": {
+		"home": "Trang chủ",
+		"members":"Thành viên",
+		"resources": "Tài liệu",
+		"projectResearch":"Dự án nghiên cứu",
+		"language": "Ngôn ngữ",
+		"search":"Tìm kiếm",
+		"login": "Đăng nhập",
+		"register":"Đăng ký thành viên"
+	}
+
+	
+}

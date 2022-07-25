@@ -1,0 +1,12 @@
+{
+	"header": {
+		"home": "Home",
+		"members":"Members",
+		"resources": "Resources",
+		"projectResearch":"Projects Research",
+		"language": "Language",
+		"search":"Search",
+		"login": "Login",
+		"register":"Register New Member"
+	}
+}
