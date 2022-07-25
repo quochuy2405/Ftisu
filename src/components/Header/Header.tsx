@@ -13,6 +13,7 @@ const Header = (): JSX.Element => {
   const { t, i18n } = useTranslation()
   const [bodyMenu, setBodyMenu] = useState<JSX.Element>()
   const [activeId, setActiveId] = useState<string>()
+  const [openSearch, setOpenSearch] = useState<boolean>(false)
   const ref = useDetectClickOutside({
     onTriggered: () => {
       handleBodyMenu('', undefined)
@@ -63,50 +64,70 @@ const Header = (): JSX.Element => {
     }
   }
 
-  return (
-    <div className={Styles.header} ref={ref}>
-      <div className={Styles.logo}>
-        <img src={logo} alt="logo" />
-      </div>
-      <div className={Styles.navLinks}>
-        {navLinks?.map((item) => (
-          <div
-            key={item?.id}
-            className={`${Styles.navLink} ${item?.id === activeId && Styles.activeLink}`}
-            onClick={() => handleBodyMenu(item?.id, item?.menu)}
-          >
-            <p>{item?.name}</p>
-            {item?.menu && (
-              <IoChevronDownOutline
-                size={12}
-                className={item?.id === activeId ? Styles.activeChevron : ''}
-              />
-            )}
-          </div>
-        ))}
-        <div className={`${Styles.lang}`}>
-          <select name="lang" id="lang" onChange={(e) => handleChangeLanguage(e)}>
-            <option>{t('header.language')}</option>
-            <option value="en">EN</option>
-            <option value="vi">VI</option>
-          </select>
-        </div>
-      </div>
-      <div className={Styles.searchBar}>
-        <GoSearch />
-        <input type="text" placeholder="Tìm kiếm" />
-      </div>
-      <div className={Styles.btnSignInUp}>
-        <Link to={'/login'} className={Styles.btnSignIn}>
-          <p>{t('header.login')}</p>
-        </Link>
+  // handle open search bar
+  const handleOpenSearch = (flag: boolean) => {
+    setOpenSearch(flag)
+  }
 
-        <Link to={'/register'} className={Styles.btnSignUp}>
-          <p>{t('header.register')}</p>
-        </Link>
+  return (
+    <>
+      <div className={Styles.header} ref={ref}>
+        <div className={Styles.logo}>
+          <img src={logo} alt="logo" />
+        </div>
+        <div className={Styles.navLinks}>
+          {navLinks?.map((item) => (
+            <div
+              key={item?.id}
+              className={`${Styles.navLink} ${item?.id === activeId && Styles.activeLink}`}
+              onClick={() => handleBodyMenu(item?.id, item?.menu)}
+            >
+              <p>{item?.name}</p>
+              {item?.menu && (
+                <IoChevronDownOutline
+                  size={12}
+                  className={item?.id === activeId ? Styles.activeChevron : ''}
+                />
+              )}
+            </div>
+          ))}
+          <div className={`${Styles.lang}`}>
+            <select name="lang" id="lang" onChange={(e) => handleChangeLanguage(e)}>
+              <option>{t('header.language')}</option>
+              <option value="en">EN</option>
+              <option value="vi">VI</option>
+            </select>
+          </div>
+        </div>
+        <div className={Styles.searchBar} onClick={() => handleOpenSearch(true)}>
+          <GoSearch />
+          <p>{t('header.search')}</p>
+        </div>
+        <div className={Styles.btnSignInUp}>
+          <Link to={'/login'} className={Styles.btnSignIn}>
+            <p>{t('header.login')}</p>
+          </Link>
+
+          <Link to={'/register'} className={Styles.btnSignUp}>
+            <p>{t('header.register')}</p>
+          </Link>
+        </div>
+        <div className={`${Styles.menuBox} ${bodyMenu && Styles.activeMenu} `}>{bodyMenu}</div>
       </div>
-      <div className={`${Styles.menuBox} ${bodyMenu && Styles.activeMenu} `}>{bodyMenu}</div>
-    </div>
+      {openSearch && (
+        <div className={Styles.searchBox}>
+          <div className={Styles.overlaySearch} onClick={() => handleOpenSearch(false)}></div>
+          <div className={Styles.search}>
+            <div className={Styles.searchTitle}>{t('header.search')}</div>
+            <div className={Styles.inputSearch}>
+              <GoSearch />
+              <input type="text" placeholder="Analyze any website or app" />
+              <p className={Styles.btnSearch}>{t('header.search')}</p>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   )
 }
 
