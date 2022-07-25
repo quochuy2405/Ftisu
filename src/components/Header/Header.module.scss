@@ -113,14 +113,15 @@
   transition: height 0.2s ease-in;
   overflow: hidden;
   z-index: 999;
-  @include lg {
-    display: none;
-  }
+
   &.activeMenu {
     display: block;
     transition: height 0.17s ease-in;
     bottom: 0;
     height: var(--max-HeightListBar);
+    @include lg {
+      display: none !important;
+    }
   }
 }
 .activeChevron {
