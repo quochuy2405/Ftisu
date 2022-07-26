@@ -1,53 +1,29 @@
 /* eslint-disable @next/next/no-img-element */
 import Styles from '@/components/Header/Menu/ResourceMenu/ResourceMenu.module.scss'
 import { Link } from 'react-router-dom'
-import { FiSettings } from 'react-icons/fi'
+import { FiDatabase, FiFileText, FiCheckCircle } from 'react-icons/fi'
+import { BsCodeSlash } from 'react-icons/bs'
 import { FaArrowRight } from 'react-icons/fa'
 
 const options = [
   {
     name: 'Tài liệu học thuật',
-    icon: <FiSettings />,
+    icon: <FiDatabase />,
     link: ''
   },
   {
-    name: 'Tài liệu học thuật',
-    icon: <FiSettings />,
+    name: 'Tài liệu nghiên cứu',
+    icon: <FiFileText />,
     link: ''
   },
   {
-    name: 'Tài liệu học thuật',
-    icon: <FiSettings />,
+    name: 'Source code',
+    icon: <BsCodeSlash />,
     link: ''
   },
   {
-    name: 'Tài liệu học thuật',
-    icon: <FiSettings />,
-    link: ''
-  },
-  {
-    name: 'Tài liệu học thuật',
-    icon: <FiSettings />,
-    link: ''
-  },
-  {
-    name: 'Tài liệu học thuật',
-    icon: <FiSettings />,
-    link: ''
-  },
-  {
-    name: 'Tài liệu học thuật',
-    icon: <FiSettings />,
-    link: ''
-  },
-  {
-    name: 'Tài liệu học thuật',
-    icon: <FiSettings />,
-    link: ''
-  },
-  {
-    name: 'Tài liệu học thuật',
-    icon: <FiSettings />,
+    name: 'Bài báo khoa học',
+    icon: <FiCheckCircle />,
     link: ''
   }
 ]

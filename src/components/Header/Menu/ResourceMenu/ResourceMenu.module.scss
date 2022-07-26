@@ -1,9 +1,10 @@
 .resourceMenu {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   height: 100%;
-  padding: 30px 50px;
+  padding: 30px 0;
   .resource {
     flex: 1;
     display: flex;
@@ -19,6 +20,7 @@
       }
       p {
         font-size: 0.9rem;
+        opacity: 0.7;
       }
       width: 80%;
     }
@@ -31,7 +33,7 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
 
     overflow: scroll;
     .option {
@@ -75,7 +77,7 @@
       flex-direction: column;
       gap: 5px;
       .outsTitle {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         opacity: 0.5;
         font-weight: 600;
       }
@@ -90,6 +92,8 @@
         }
       }
       .outsDescription {
+        font-size: 0.8rem;
+        opacity: 0.8;
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
@@ -101,8 +105,13 @@
         gap: 10px;
         align-items: center;
         font-weight: 600;
-        font-size: 1.1rem;
+        font-size: 1rem;
         color: var(--color-main);
+        cursor: pointer;
+        opacity: 0.8;
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }

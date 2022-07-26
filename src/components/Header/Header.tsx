@@ -31,7 +31,7 @@ const Header = (): JSX.Element => {
     {
       id: 'link_2',
       name: t('header.members'),
-      menu: <MemberMenu />
+      menu: <ResourceMenu />
     },
     {
       id: 'link_3',
@@ -46,8 +46,8 @@ const Header = (): JSX.Element => {
   ]
 
   // change language
-  const handleChangeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    i18n.changeLanguage(event.target.value.toString().toLowerCase())
+  const handleChangeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang.toString().toLowerCase())
     handleBodyMenu('', undefined)
   }
 
@@ -92,12 +92,19 @@ const Header = (): JSX.Element => {
               )}
             </div>
           ))}
-          <div className={`${Styles.lang}`}>
-            <select name="lang" id="lang" onChange={(e) => handleChangeLanguage(e)}>
-              <option>{t('header.language')}</option>
-              <option value="en">EN</option>
-              <option value="vi">VI</option>
-            </select>
+          <div
+            className={`${Styles.lang} ${'lang' === activeId && Styles.active}`}
+            onClick={() => handleBodyMenu('lang', undefined)}
+          >
+            <p>{t('header.language')}</p>{' '}
+            <IoChevronDownOutline
+              size={12}
+              className={'lang' === activeId ? Styles.activeChevron : ''}
+            />
+            <ul className={'lang' === activeId ? Styles.activeLang : ''}>
+              <li onClick={() => handleChangeLanguage('vi')}>VI</li>
+              <li onClick={() => handleChangeLanguage('en')}>EN</li>
+            </ul>
           </div>
         </div>
         <div className={Styles.searchBar} onClick={() => handleOpenSearch(true)}>
